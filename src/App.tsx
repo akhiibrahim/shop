@@ -419,7 +419,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section id="home" className="pt-48 pb-20 px-6 text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[85vh]">
+      <section id="home" className="pt-32 md:pt-48 pb-12 md:pb-20 px-6 text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[75vh] md:min-h-[85vh]">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-brand-orange/10 blur-[120px] rounded-full pointer-events-none" />
         
         <motion.div 
@@ -454,50 +454,15 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* Process Section */}
-      <section id="process" className="py-24 px-6 relative z-10 bg-black/20 border-y border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white/90 mb-4">How it works.</h2>
-            <p className="text-white/50">Three simple steps to mouth-watering visuals.</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {PROCESS_STEPS.map((step, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.2, duration: 0.6 }}
-                className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 hover:bg-white/[0.04] transition-colors relative overflow-hidden group"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 blur-[50px] rounded-full group-hover:bg-brand-orange/10 transition-colors" />
-                <div className="mb-6 bg-black/40 w-16 h-16 rounded-2xl flex items-center justify-center border border-white/5 shadow-lg">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white/90 mb-3">{step.title}</h3>
-                <p className="text-white/60 leading-relaxed text-sm">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Before & After Gallery (Styled like the bottom card in the image) */}
-      <section id="gallery" className="pb-24 px-4 md:px-6 relative z-10">
+      <section id="gallery" className="py-16 md:py-24 px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="bg-white/[0.03] border border-white/10 border-t-brand-orange/40 rounded-[40px] p-8 md:p-12 relative overflow-hidden shadow-[0_-20px_50px_-20px_rgba(232,80,26,0.2)]"
+            className="bg-white/[0.03] border border-white/10 border-t-brand-orange/40 rounded-[32px] md:rounded-[40px] p-6 md:p-12 relative overflow-hidden shadow-[0_-20px_50px_-20px_rgba(232,80,26,0.2)]"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-32 bg-brand-orange/20 blur-[100px] pointer-events-none" />
             
@@ -546,14 +511,49 @@ export default function App() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section id="process" className="py-16 md:py-24 px-6 relative z-10 bg-black/20 border-y border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-10 md:mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white/90 mb-4">How it works.</h2>
+            <p className="text-white/50">Three simple steps to mouth-watering visuals.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {PROCESS_STEPS.map((step, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: idx * 0.2, duration: 0.6 }}
+                className="bg-white/[0.02] border border-white/5 rounded-3xl p-6 md:p-8 hover:bg-white/[0.04] transition-colors relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 blur-[50px] rounded-full group-hover:bg-brand-orange/10 transition-colors" />
+                <div className="mb-6 bg-black/40 w-16 h-16 rounded-2xl flex items-center justify-center border border-white/5 shadow-lg">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white/90 mb-3">{step.title}</h3>
+                <p className="text-white/60 leading-relaxed text-sm">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section id="faq" className="py-24 px-6 relative z-10 bg-black/20 border-t border-white/5">
+      <section id="faq" className="py-16 md:py-24 px-6 relative z-10 bg-black/20 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white/90 mb-4">Got questions?</h2>
             <p className="text-white/50">Everything you need to know about the process.</p>
@@ -568,7 +568,7 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 relative overflow-hidden">
+      <section id="contact" className="py-16 md:py-24 px-6 relative overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-brand-orange/10 blur-[120px] rounded-full pointer-events-none" />
         
         <motion.div 
