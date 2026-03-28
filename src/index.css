@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-bubbly: "Spicy Rice", serif;
+  --color-brand-orange: #E8501A;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
